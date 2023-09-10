@@ -1,0 +1,38 @@
+const express = require('express')
+const morgan = require('morgan')
+require('dotenv').config()
+
+const app = express()
+
+const userRouter = require('./routers/userRouter')
+
+const isLogged = require('./middlewares/userLogged')
+
+const { sicuel }  = require("./config")
+
+const host = 'localhost'
+const path = require('path')
+
+/* Globals */
+app.set('port', process.env.PORT || 3000)
+
+app.get('/', (request, response) => {
+    console.log('renderizando vista')
+    //response.render('index')
+})
+
+// app.set('views', path.join(__dirname, 'views'))
+// app.set('view engine', 'ejs')
+
+/* mid */
+
+app.use(morgan('dev'))
+app.use(express.json())
+//app.use(isLogged)
+
+app.use('/users', userRouter)
+
+app.listen(app.get('port'), ()=>{
+    sicuel.sync(); //{force: false}
+    console.log(`servidor arriba en ${host} y puerto ` + app.get('port')) 
+})
