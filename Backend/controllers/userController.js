@@ -21,15 +21,14 @@ exports.getAllSupervisores = async (req, res) => {
 
 exports.getUser = async (req, res) => {
     const id = req.params.id
+    if (isNaN(id)){
+        return res.status(406).json({'message': "Criterio de busqueda no aceptado"})
+    }
     const user = await servicioUsuario.filterById(id)
     if (!user) {
         return res.status(400).json({'message': "Usuario no encontrado"})
     }
-    res.status(200).json(user)
-
-    //const response = await sequelize.query('SELECT * FROM authuser');
-    //res.status(200).json(response.rows)
-    //console.log( response.rows)
+    return res.status(200).json(user)
 }
 
 exports.createUser = async (req, res) => {
@@ -48,6 +47,9 @@ exports.updateUser = async (req, res) => {
     try {
         let data = req.body
         const id = req.params.id
+        if (isNaN(id)){
+            return res.status(406).json({'message': "Criterio para actualizacion no aceptado"})
+        }
         await servicioUsuario.update(id, data)
         return res.status(201).send("Usuario actualizado")
     } catch (error) {

@@ -40,3 +40,5 @@ app.listen(app.get('port'), ()=>{
     sicuel.sync(); //{force: false}
     console.log(`servidor arriba en ${host} y puerto ` + app.get('port')) 
 })
+
+module.exports = app

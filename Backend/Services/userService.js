@@ -4,7 +4,6 @@ class UserService{
     constructor(){}
 
     async getAll(){
-        console.log('antes de llamar a la base')
         let users = null;
         try{
             users = await Usuario.findAll({
