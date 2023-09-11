@@ -1,22 +1,30 @@
 
+const VisitorsService = require('../Services/visitaService')
+const servicioVisitas = new VisitorsService();
 
-exports.getAllVisitas = (req, res) => {
-    console.log('accediendo a los usuarios')
+exports.getAllVisitas = async (req, res) => {
+    const visitas =  await servicioVisitas.getAll()
+    if (!visitas){
+        return res.status(204).json(visitas)
+    }    
+    return res.status(200).json(visitas)
 }
 
-exports.getVisita = (req, res) => {
-    console.log('obteniendo usuario')
+exports.getVisita = async (req, res) => {
+    const id = req.params.id
+    const registro = await servicioVisitas.filterById(id)
+    if (!registro) {
+        return res.status(400).json({'message': "Registro no encontrado"})
+    }
+    res.status(200).json(registro)
 }
 
-
-exports.createVisita = (req, res) => {
-    console.log('obteniendo usuario')
-}
-
-exports.updateVisita = (req, res) => {
-    console.log('obteniendo usuario')
-}
-
-exports.deleteVisita = (req, res) => {
-    console.log('obteniendo usuario')
+exports.createVisita = async (req, res) => {
+    try {
+        let data = req.body
+        await servicioVisitas.create(data)
+        return res.status(201).send("Visita registrado")
+    } catch (error) {
+        return res.status(500).json({"error": error.message})
+    }
 }

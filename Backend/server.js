@@ -5,6 +5,8 @@ require('dotenv').config()
 const app = express()
 
 const userRouter = require('./routers/userRouter')
+const visitaRouter = require('./routers/visitaRouter')
+const authRouter = require('./routers/authRouter')
 
 const isLogged = require('./middlewares/userLogged')
 
@@ -31,6 +33,8 @@ app.use(express.json())
 //app.use(isLogged)
 
 app.use('/users', userRouter)
+app.use('/visitas', visitaRouter)
+app.use('/authRouter', authRouter)
 
 app.listen(app.get('port'), ()=>{
     sicuel.sync(); //{force: false}
