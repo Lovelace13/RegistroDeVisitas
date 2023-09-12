@@ -39,7 +39,7 @@ npm start
 
 ### Rutas a Consumir
 
-[ipAddress]:/auth/register
+[ipAddress:port]/auth/register
 Ejemplo de registro obtenido mediante metedo get de la base de datos, la contraseña se encuentra encriptada
 ```JSON
   {
@@ -48,7 +48,7 @@ Ejemplo de registro obtenido mediante metedo get de la base de datos, la contras
   }
 ```
 
-[ipAddress]:3030/authRouter/login
+[ipAddress:port]/authRouter/login
 Ejemplo json enviado mediante metodo post para iniciar sesion
 ```JSON
   {
@@ -57,7 +57,7 @@ Ejemplo json enviado mediante metodo post para iniciar sesion
   }
 ```
 
-[ipAddress]:3030/authRouter/dashboard 
+[ipAddress:port]/authRouter/dashboard 
 Ejemplo de token generado en el inicio de sesion correcto
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImttYXJpbkBjb3JyZW8uY29tIiwiaWF0IjoxNjk0Mzk2OTcyfQ.PaeZuGo93lDYTG-woYhky4Nv6RTwAFrpgGQTBRYvJPE
