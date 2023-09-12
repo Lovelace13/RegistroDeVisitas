@@ -13,6 +13,19 @@ npm install
 npm run dev
 ```
 
+### Manejo de sesiones
+Se usa la librera JWT y bcrypt para encriptar y generar token, la llave se encuentra en el archivo .env como variable de entorno esta puede ser modificada por el usuario al igual que el numero salt que se usa para encriptar la clave
+Generacion de token:
+```
+  generateToken(payload){
+      const token = jwt.sign(payload, process.env.SECRET_KEY)
+      return token
+  }
+```
+Encriptado con bcryp:
+```
+  contraseña = bcrypt.hashSync(data.contraseña, 10)
+```
 ### Deployment
 
 ```sh
@@ -22,5 +35,33 @@ npm i
 npm run build
 npm start
 ```
+
+### Rutas a Consumir
+
+* [ipAddress]:/auth/register
+Ejemplo de registro obtenido mediante metedo get de la base de datos, la contraseña se encuentra encriptada
+```JSON
+  {
+    "email": "kmarin@correo.com",
+    "contraseña": "$2b$10$ZpRJygpm2We5sSmeed7dReUbjfXbN3SJOEz.dUF7iEB3IPwZaoWhq"
+  }
+```
+
+* [ipAddress]:3030/authRouter/login
+Ejemplo json enviado mediante metodo post para iniciar sesion
+```JSON
+  {
+    "email": "kmarin@correo.com",
+    "contraseña": "321step"
+  }
+```
+
+* [ipAddress]:3030/authRouter/dashboard 
+Ejemplo de token generado en el inicio de sesion correcto
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImttYXJpbkBjb3JyZW8uY29tIiwiaWF0IjoxNjk0Mzk2OTcyfQ.PaeZuGo93lDYTG-woYhky4Nv6RTwAFrpgGQTBRYvJPE
+```
+
+
 
 > Se requiere instalar PostgreSQL
