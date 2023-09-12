@@ -1,7 +1,7 @@
 ### Servidor Express with JWT
 
 Esta es una aplicacion web del lado del servidor que usa el entorno NODE JS con el framework Express.
-La aplicación realiza consultas a una base de datos relacional PostgreSQL mediante un ORM llamado Sequelizae.
+La aplicación realiza consultas a una base de datos relacional PostgreSQL mediante un ORM llamado Sequelize.
 
 Este proyecto se encuentra en fase de desarrollo, por lo que se incluyen los TDD a las rutas api que se van a consumir del lado del frontend.
 
