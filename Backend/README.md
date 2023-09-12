@@ -14,7 +14,8 @@ npm run dev
 ```
 
 ### Manejo de sesiones
-Se usa la librera JWT y bcrypt para encriptar y generar token, la llave se encuentra en el archivo .env como variable de entorno esta puede ser modificada por el usuario al igual que el numero salt que se usa para encriptar la clave
+Se usa la librera JWT y bcrypt para encriptar y generar token, la llave se encuentra en el archivo .env como variable de entorno esta puede ser modificada por el usuario al igual que el numero salt que se usa para encriptar la clave.
+
 Generacion de token:
 ```
   generateToken(payload){
@@ -38,7 +39,7 @@ npm start
 
 ### Rutas a Consumir
 
-* [ipAddress]:/auth/register
+[ipAddress]:/auth/register
 Ejemplo de registro obtenido mediante metedo get de la base de datos, la contraseña se encuentra encriptada
 ```JSON
   {
@@ -47,7 +48,7 @@ Ejemplo de registro obtenido mediante metedo get de la base de datos, la contras
   }
 ```
 
-* [ipAddress]:3030/authRouter/login
+[ipAddress]:3030/authRouter/login
 Ejemplo json enviado mediante metodo post para iniciar sesion
 ```JSON
   {
@@ -56,7 +57,7 @@ Ejemplo json enviado mediante metodo post para iniciar sesion
   }
 ```
 
-* [ipAddress]:3030/authRouter/dashboard 
+[ipAddress]:3030/authRouter/dashboard 
 Ejemplo de token generado en el inicio de sesion correcto
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImttYXJpbkBjb3JyZW8uY29tIiwiaWF0IjoxNjk0Mzk2OTcyfQ.PaeZuGo93lDYTG-woYhky4Nv6RTwAFrpgGQTBRYvJPE
