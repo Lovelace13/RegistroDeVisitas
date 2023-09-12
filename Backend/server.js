@@ -1,5 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 require('dotenv').config()
 
 const app = express()
@@ -30,6 +31,7 @@ app.get('/', (request, response) => {
 
 app.use(morgan('dev'))
 app.use(express.json())
+app.use(cors())
 //app.use(isLogged)
 
 app.use('/users', userRouter)

@@ -1,15 +1,15 @@
-# Registro de visita
+## Registro de visita
 
 Aplicación web para el registro de visitantes
 
-# Instalar dependencias
+### Instalar dependencias
 * npm
   ```sh
   npm install
   ```
 
-# Iniciar la aplicacion
-* npm
+### Iniciar la aplicacion
+_Para ejecutar la aplicacion en modo desarrollo
   ```sh
   npm run dev
   ```

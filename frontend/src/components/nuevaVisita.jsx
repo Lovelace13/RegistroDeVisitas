@@ -1,27 +1,17 @@
-import { Container, Form, Row, Button, Col } from 'react-bootstrap';
-import { useForm } from "react-hook-form";
-//import registerRequest from './Backend/auth'
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
 
 
-function PageRegister () {
-  const newUser = { 
-    nombre: "",
-    apellido: "",
-  }
-  const { register,handleSubmit } = useForm();
+const NewVisit = () => {
   return (
-    <Container>
-      <h1 className='mt-3 pb-2'>Registro de Usuarios</h1>
-      <Form onSubmit={handleSubmit( (values) => {
-        console.log(values);
-      })}>
-        <Form.Group as={Row} className="mb-3" controlId="InputNombre">
-          <Form.Label column sm="3">Nombre</Form.Label>
+    <>
+      <Form>
+        <Form.Group as={Row} className="mb-3" controlId="InputFecha">
+          <Form.Label column sm="3">Fecha de Ingreso</Form.Label>
           <Col sm="8">
-            <Form.Control 
-              type="text" 
-              placeholder="nombre de usuario" 
-              {...register("nombre", { required: "Nombre es obligatorio" })}/>
+          <Form.Control type="date" value="YYYY-MM-DD" />
           </Col>
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="InputApellido">
@@ -51,17 +41,14 @@ function PageRegister () {
             <Form.Control type="text" placeholder="password" />
           </Col>
         </Form.Group>
+        <Form.Group className="mb-3" controlId="textMotivo">
+          <Form.Label>Motivo de Visita</Form.Label>
+          <Form.Control as="textarea" rows={3} />
+        </Form.Group>
       </Form>
-
-      <Button variant="primary" as="input" type="submit">
-          Registrar
-      </Button>{' '}
-    </Container>
-
+      <Button variant="primary">Registrar</Button>{' '}
+    </>
   )
 }
 
-export default PageRegister;
-
-
-
+export default NewVisit;
