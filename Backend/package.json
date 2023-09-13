@@ -4,7 +4,8 @@
   "description": "Manejo de datos, sesiones y roles",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "dev": "nodemon server.js",
+    "start": "node ./server.js",
     "serve": "node serve.js",
     "test": "node Test/test-server.js --watch /Test*"
   },

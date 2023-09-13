@@ -7,10 +7,11 @@ Este proyecto se encuentra en fase de desarrollo, por lo que se incluyen los TDD
 
 
 ### Instalación de entorno de desarrollo
-
+npm start, ejecuta el proyecto bajo el comando nodemon
 ```sh
 npm install
-npm run dev
+npm serve
+npm start
 ```
 
 ### Manejo de sesiones

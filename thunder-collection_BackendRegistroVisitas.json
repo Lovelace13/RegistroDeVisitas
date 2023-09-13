@@ -1,0 +1,113 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "BackendRegistroVisitas",
+    "dateExported": "2023-09-13T06:21:47.017Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2edfed07-7171-4042-adc5-555db98ebc01",
+            "colId": "2c178023-b360-4744-babe-2a7ba48795fe",
+            "containerId": "",
+            "name": "localhost:3030/",
+            "url": "localhost:3030/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-09-13T06:19:21.292Z",
+            "modified": "2023-09-13T06:19:21.292Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"nombre\": \"Martha\",\n    \"lastname\": \"Armendaris\",\n    \"rol\": \"R\",\n    \"email\": \"marmendaris@correo.com\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "be658430-702b-482e-a9c2-7ea9f6e148e2",
+            "colId": "2c178023-b360-4744-babe-2a7ba48795fe",
+            "containerId": "",
+            "name": "localhost:3030/authRouter/register",
+            "url": "localhost:3030/authRouter/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-09-13T06:19:50.785Z",
+            "modified": "2023-09-13T06:19:50.785Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"gmartinez@correo.com\",\n  \"contraseña\": \"pwd123*\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9a0aec2a-e329-47cb-9286-11067df20842",
+            "colId": "2c178023-b360-4744-babe-2a7ba48795fe",
+            "containerId": "",
+            "name": "localhost:3030/authRouter/login",
+            "url": "localhost:3030/authRouter/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-13T06:20:02.513Z",
+            "modified": "2023-09-13T06:20:02.513Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"kmarin@correo.com\",\n  \"contraseña\": \"321step\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3bfc7671-a991-415d-9bc9-99dc659b9cfa",
+            "colId": "2c178023-b360-4744-babe-2a7ba48795fe",
+            "containerId": "",
+            "name": "localhost:3030/users",
+            "url": "localhost:3030/visitas",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-09-13T06:20:21.025Z",
+            "modified": "2023-09-13T06:20:21.025Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6e252391-232c-490e-92e7-1e21593d60ff",
+            "colId": "2c178023-b360-4744-babe-2a7ba48795fe",
+            "containerId": "",
+            "name": "localhost:3030/users/1",
+            "url": "localhost:3030/users/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-09-13T06:21:06.808Z",
+            "modified": "2023-09-13T06:21:06.808Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"rol\": \"R\",\n    \"email\": \"marmendaris@correo.com\"\n  }\n\t",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0dc045af-77a2-4f6d-b295-abef284a86a7",
+            "colId": "2c178023-b360-4744-babe-2a7ba48795fe",
+            "containerId": "",
+            "name": "localhost:3030/users",
+            "url": "localhost:3030/users",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-09-13T06:21:39.712Z",
+            "modified": "2023-09-13T06:21:39.712Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

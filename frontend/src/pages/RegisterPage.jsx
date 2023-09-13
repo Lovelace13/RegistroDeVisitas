@@ -8,6 +8,7 @@ function PageRegister () {
     nombre: "",
     apellido: "",
   }
+  const [initialValues, setInitialValues] = React.useState(newUser);
   const { register,handleSubmit } = useForm();
   return (
     <Container>
