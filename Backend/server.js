@@ -39,7 +39,7 @@ app.use('/visitas', visitaRouter)
 app.use('/authRouter', authRouter)
 
 app.listen(app.get('port'), ()=>{
-    sicuel.sync({force: true}); //{force: false}
+    sicuel.sync(); //{force: false}
     console.log(`servidor arriba en ${host} y puerto ` + app.get('port')) 
 })
 
