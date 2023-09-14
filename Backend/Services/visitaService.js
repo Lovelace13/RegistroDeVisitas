@@ -1,4 +1,5 @@
-const  Visita  = require('../models/visitantesModel')
+const Visita  = require('../models/visitantesModel')
+const Department = require('../models/departmentModel')
 
 class VisitaService{
     constructor(){}
@@ -13,7 +14,6 @@ class VisitaService{
             throw new Error('error en VisitaService.getAll ' + error.message);
         }
     }
-
 
     async filterById(id){
         try{
@@ -51,6 +51,30 @@ class VisitaService{
         catch(error){
             throw new Error('error en VisitaService.delete ' + error.message)
         }
+    }
+
+    async listaDepartamentos(){
+        let departamentos = null;
+        try{
+            departamentos = await Department.findAll({ }) 
+            return departamentos;
+        }
+        catch(error){
+            throw new Error('error en VisitaService.listaDepartamentos ' + error.message);
+        }
+    }
+
+    async departamentoVisita(codigo){
+        try{
+            const departamento = await Department.findOne({ 
+                where: { coddepartamento: codigo } 
+            })
+            return departamento
+        }
+        catch(error){
+            throw new Error('error en VisitaService.departamentoVisita ' + error.message);
+        }
+        
     }
 }
 

@@ -1,34 +1,37 @@
-import { Component } from "react";
+
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { useState } from 'react';
 
-class Visita extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      enCurso: 0
-    }
-  }
+const Visita = (props) => {
+  const [state, setState ] = useState({
+    enCurso: 1
+  })
 
-  render(){
-    return (
-      <>
-        <Card style={{ width: '18rem' }}>
-          <ListGroup variant="flush">
-            <ListGroup.Item>fecha ingreso: </ListGroup.Item>
-            <ListGroup.Item>Hora: </ListGroup.Item>
-            <ListGroup.Item>Nombre: </ListGroup.Item>
-            <ListGroup.Item>Cedula: </ListGroup.Item>
-            <ListGroup.Item>Motivo: </ListGroup.Item>
-            <ListGroup.Item>Dpto visitado: </ListGroup.Item>
-            <ListGroup.Item>Dpto visitado: </ListGroup.Item>
-            <ListGroup.Item>Estado Visita: </ListGroup.Item>
-            <ListGroup.Item>Novedad: </ListGroup.Item>
-          </ListGroup>
-        </Card>
-      </>
-    )
+  const setEnCurso = (e) => {
+    setState({
+      ...state,
+      enCurso: e.target.value
+    })
   }
-}
+  
+  return (
+    <>
+      <Card style={{ width: '18rem' }}>
+        <ListGroup variant="flush">
+          <ListGroup.Item>fecha ingreso: {props.fechaIng} </ListGroup.Item>
+          <ListGroup.Item>Hora: {props.hora}</ListGroup.Item>
+          <ListGroup.Item>Nombre: {props.nombre} </ListGroup.Item>
+          <ListGroup.Item>Cedula: {props.ced}</ListGroup.Item>
+          <ListGroup.Item>Motivo: {props.motivo} </ListGroup.Item>
+          <ListGroup.Item>Dpto visitado: {props.dep}</ListGroup.Item>
+          <ListGroup.Item>Estado Visita: {setEnCurso} </ListGroup.Item>
+          <ListGroup.Item>Novedad: {props.novedad}</ListGroup.Item>
+        </ListGroup>
+      </Card>
+    </>
+  )
+
+ }
 
 export default Visita;

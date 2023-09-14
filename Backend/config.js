@@ -9,7 +9,7 @@ const sicuel = new Sequelize( process.env.DATABASE, process.env.USER, process.en
         host: process.env.HOST,
         dialect: 'postgres',
         port: process.env.PORT_DB,
-        logging: false,
+        logging: true,
         dialectOptions:{
             statement_timeout: process.env.QUERY_TIMEOUT,
             ssl: {

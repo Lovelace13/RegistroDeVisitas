@@ -8,8 +8,10 @@ function PageRegister () {
     nombre: "",
     apellido: "",
   }
+  
   const [initialValues, setInitialValues] = React.useState(newUser);
   const { register,handleSubmit } = useForm();
+  
   return (
     <Container>
       <h1 className='mt-3 pb-2'>Registro de Usuarios</h1>
@@ -60,6 +62,13 @@ function PageRegister () {
     </Container>
 
   )
+  // componentDidMount(){
+
+  // }
+  // componentWillUnmount(){
+
+  // }
+
 }
 
 export default PageRegister;
