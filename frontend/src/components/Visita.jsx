@@ -1,34 +1,31 @@
 
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import { useState } from 'react';
+import {ListGroup, Button }from 'react-bootstrap';
+import { useState, useEffect } from 'react';
 
-const Visita = (props) => {
-  const [state, setState ] = useState({
-    enCurso: 1
-  })
+const Visita = ({ visit }) => {
 
-  const setEnCurso = (e) => {
-    setState({
-      ...state,
-      enCurso: e.target.value
-    })
-  }
   
   return (
     <>
       <Card style={{ width: '18rem' }}>
-        <ListGroup variant="flush">
-          <ListGroup.Item>fecha ingreso: {props.fechaIng} </ListGroup.Item>
-          <ListGroup.Item>Hora: {props.hora}</ListGroup.Item>
-          <ListGroup.Item>Nombre: {props.nombre} </ListGroup.Item>
-          <ListGroup.Item>Cedula: {props.ced}</ListGroup.Item>
-          <ListGroup.Item>Motivo: {props.motivo} </ListGroup.Item>
-          <ListGroup.Item>Dpto visitado: {props.dep}</ListGroup.Item>
-          <ListGroup.Item>Estado Visita: {setEnCurso} </ListGroup.Item>
-          <ListGroup.Item>Novedad: {props.novedad}</ListGroup.Item>
-        </ListGroup>
+        { visit?.map( (visita) => (
+          <ListGroup key={visita.idvisita} variant="flush">
+            <ListGroup.Item>fecha ingreso: {visita.fechaingreso} </ListGroup.Item>
+            <ListGroup.Item>Hora: {visita.hora}</ListGroup.Item>
+            <ListGroup.Item>Nombre: {visita.nombre} </ListGroup.Item>
+            <ListGroup.Item>Cedula: {visita.cedula}</ListGroup.Item>
+            <ListGroup.Item>Motivo: {visita.motivo} </ListGroup.Item>
+            <ListGroup.Item>Dpto visitado: {visita.departamento}</ListGroup.Item>
+            <ListGroup.Item>Estado Visita: {visita.estado} </ListGroup.Item>
+            <ListGroup.Item>Novedad: {visita.novedad}</ListGroup.Item>
+  
+          </ListGroup>
+        ))}
+
       </Card>
+      
+      {/* <Button variant="info" onClick={()=>cambiarNovedad()}>Actualizar novedad</Button>{' '} */}
     </>
   )
 

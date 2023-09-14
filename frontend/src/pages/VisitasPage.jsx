@@ -1,17 +1,20 @@
-
 import MenuVisitas from "../components/menuVisita";
 import PaginacionV from "../components/paginacionVisita";
 import Visita from "../components/Visita";
+import { useState, useEffect } from 'react';
+import usePetitionGet from "../hooks/usePetitionGet"
+import axios from "axios";
 
-function pageVisitas (props) {
-  // { numVisita, nombreVisita, movitoVisita }
+
+function pageVisitas () {
+  const [visitas, cargandoVisitas] = usePetitionGet(`/visitas`)
+
   return (
     <div className='container'>
       <MenuVisitas></MenuVisitas>
-      <h1>Visitas</h1>
-      <h2>#{props.idvisita} - {props.nombre} </h2>
-      <span>{props.motivo} motivo</span>
-      <Visita></Visita>
+      <h1>Visitas Registradas</h1>
+
+      <Visita visit={ visitas }></Visita>
       <PaginacionV/>
     </div>
 
