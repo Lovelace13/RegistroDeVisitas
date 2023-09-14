@@ -18,22 +18,22 @@ const path = require('path')
 
 /* Globals */
 app.set('port', process.env.PORT || 3000)
-
 app.get('/', (request, response) => {
     console.log('renderizando vista')
-    //response.render('index')
+    response.render('index')
 })
 
-// app.set('views', path.join(__dirname, 'views'))
-// app.set('view engine', 'ejs')
+/* Vista para el backend: Admin */
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
 /* mid */
-
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(cors())
 //app.use(isLogged)
 
+/* Rutas para consumo */
 app.use('/users', userRouter)
 app.use('/visitas', visitaRouter)
 app.use('/authRouter', authRouter)
