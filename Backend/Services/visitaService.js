@@ -16,9 +16,10 @@ class VisitaService{
     }
 
     async filterById(id){
+        console.log('entre a filterById')
         try{
             const visita = await Visita.findOne({ 
-                where: { iduser: id } 
+                where: { idvisita: id } 
             })
             return visita
         }
