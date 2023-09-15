@@ -1,27 +1,25 @@
 import Pagination from 'react-bootstrap/Pagination';
 
-let active = 2;
-let items = [];
-for (let number = 1; number <= 5; number++) {
-  items.push(
-    <Pagination.Item key={number} active={number === active}>
-      {number}
-    </Pagination.Item>,
-  );
-}
+const PaginacionV = ({ visitasPorPag, totalVisitas, paginate}) => {
+  const pageNumbers = [];
 
-const PaginacionV = () => {
+  for (let number = 1; number <= Math.ceil(totalVisitas / visitasPorPag); number++) {
+    pageNumbers.push(number);
+  }
+  
+
   return (
     <div>
       <Pagination>
-        {items}
+        {pageNumbers.map((number) => (
+          <Pagination.Item key={number} onClick={() => paginate(number)}>
+            {number}
+          </Pagination.Item>
+        ))}
       </Pagination>
       <br />
     </div>
   );
-  // componenWilUnmount(){
-
-  // }
 }
 
 

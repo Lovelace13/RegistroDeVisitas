@@ -1,0 +1,191 @@
+{
+    "info": {
+        "_postman_id": "3a1d1fe7-2e38-456b-927a-609e221b7618",
+        "name": "BackendRegistroVisitas",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "localhost:3030/",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:3030/users",
+                    "path": [
+                        "users"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "  {\n    \"nombre\": \"Martha\",\n    \"lastname\": \"Armendaris\",\n    \"rol\": \"R\",\n    \"email\": \"marmendaris@correo.com\"\n  }"
+                }
+            }
+        },
+        {
+            "name": "localhost:3030/authRouter/register",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:3030/authRouter/register",
+                    "path": [
+                        "authRouter",
+                        "register"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"email\": \"gmartinez@correo.com\",\n  \"contraseña\": \"pwd123*\"\n}"
+                }
+            }
+        },
+        {
+            "name": "localhost:3030/authRouter/login",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:3030/authRouter/login",
+                    "path": [
+                        "authRouter",
+                        "login"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"email\": \"kmarin@correo.com\",\n  \"contraseña\": \"321step\"\n}"
+                }
+            }
+        },
+        {
+            "name": "localhost:3030/users",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3030/visitas",
+                    "path": [
+                        "visitas"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030"
+                }
+            }
+        },
+        {
+            "name": "localhost:3030/users/1",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "localhost:3030/users/1",
+                    "path": [
+                        "users",
+                        "1"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "  {\n    \"rol\": \"R\",\n    \"email\": \"marmendaris@correo.com\"\n  }\n\t"
+                }
+            }
+        },
+        {
+            "name": "localhost:3030/users",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3030/users",
+                    "path": [
+                        "users"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030"
+                }
+            }
+        },
+        {
+            "name": "localhost:3030",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "https://backend-registrovisitas-45c392ee1fe6.herokuapp.com/visitas/departamentos",
+                    "path": [
+                        "visitas",
+                        "departamentos"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "backend-registrovisitas-45c392ee1fe6",
+                        "herokuapp",
+                        "com"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "localhost:3030/visitas",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://backend-registrovisitas-45c392ee1fe6.herokuapp.com/visitas",
+                    "path": [
+                        "visitas"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "backend-registrovisitas-45c392ee1fe6",
+                        "herokuapp",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "  {\n    \"fechaingreso\": \"20230730\",\n    \"hora\": \"110506\",\n    \"nombre\": \"Anastasio Rafael Romero Arteaga\",\n    \"cedula\": \"0926074410\",\n    \"motivo\": \"Entrevista con el jefe de Administracion\",\n    \"departamento\": \"ADM\",\n    \"estado\": false,\n    \"novedad\": \"N/A\"\n  }"
+                }
+            }
+        }
+    ]
+}
